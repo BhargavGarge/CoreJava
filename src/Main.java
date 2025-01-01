@@ -95,11 +95,6 @@ Scanner scanner=new Scanner(System.in);
 
 
 
-int second =32;
-int first=25;
-second=17;
-first=second;
-        System.out.println(second);
-        System.out.println("Hello");
+
     }
 }
