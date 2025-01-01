@@ -1,7 +1,6 @@
 //class is the blueprint or template for object, it defines properties and methods that its object will have
 
 //object is instance of class, Objects have state (data) and behavior(methods)
-
 class Car{
     String brand;
     String color;
