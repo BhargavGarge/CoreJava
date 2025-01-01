@@ -87,7 +87,7 @@ public class DecisionStatement {
             System.out.println("Welcome");
         }
         else{
-            System.out.println("Fuck off");
+            System.out.println("not correct password");
         }
     }
 }
