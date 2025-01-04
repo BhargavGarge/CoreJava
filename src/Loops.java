@@ -20,6 +20,8 @@ public class Loops {
 
         // Calculate the factorial of a number
         Factorial(scanner);
+        //Palindrome
+        Palindrome(scanner);
 
         scanner.close();
     }
@@ -102,5 +104,24 @@ public class Loops {
         }
 
         System.out.println("Factorial of " + num + " is: " + fact);
+    }
+    public static void Palindrome(Scanner scanner) {
+        System.out.println("Enter a string to check if it's a palindrome:");
+        String str = scanner.nextLine(); // Take input from user
+        boolean isPalindrome = true;
+
+        int length = str.length();
+        for (int i = 0; i < length / 2; i++) {
+            if (str.charAt(i) != str.charAt(length - i - 1)) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        if (isPalindrome) {
+            System.out.println(str + " is a palindrome.");
+        } else {
+            System.out.println(str + " is not a palindrome.");
+        }
     }
 }
