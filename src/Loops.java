@@ -22,7 +22,7 @@ public class Loops {
         Factorial(scanner);
         //Palindrome
         Palindrome(scanner);
-
+SumOfDigits(scanner);
         scanner.close();
     }
 
@@ -124,4 +124,27 @@ public class Loops {
             System.out.println(str + " is not a palindrome.");
         }
     }
-}
+
+        public static void SumOfDigits(Scanner scanner) {
+            System.out.print("Enter a number: ");
+            int upperLimit = scanner.nextInt();
+
+            System.out.println("Number and Sum of Digits:");
+            for (int number = 1; number <= upperLimit; number++) {
+                int sum = 0;
+                int temp = number;
+
+                // Calculate the sum of digits for the current number
+                while (temp > 0) {
+                    sum += temp % 10; // Extract the last digit
+                    temp /= 10;       // Remove the last digit
+                }
+
+                // Print the result
+                System.out.println("Number: " + number + ", Sum of Digits: " + sum);
+            }
+
+        }
+
+    }
+
