@@ -198,6 +198,68 @@ public class ReverseLinkedList {
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
 
+
+
+
+
+
+
+
+
+
+
+        // Definition for singly-linked list node
+class ListNode {
+    int value;
+    ListNode next;
+
+    ListNode(int value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+
+public class LinkedListLength {
+    // Function to calculate the length of the linked list
+    public static int getLength(ListNode head) {
+        int length = 0;
+        ListNode current = head;
+
+        while (current != null) {
+            length++;
+            current = current.next; // Move to the next node
+        }
+
+        return length;
+    }
+
+    // Helper function to create and print the linked list
+    public static void printLinkedList(ListNode head) {
+        ListNode current = head;
+        while (current != null) {
+            System.out.print(current.value + " → ");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
+
+    public static void main(String[] args) {
+        // Create a linked list: 1 → 2 → 3 → 4 → null
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+
+        // Print the linked list
+        System.out.println("Linked List:");
+        printLinkedList(head);
+
+        // Find and print the length of the linked list
+        int length = getLength(head);
+        System.out.println("Length of the linked list is: " + length);
+    }
+}
+
         System.out.println("Original Linked List:");
         printLinkedList(head);
 
