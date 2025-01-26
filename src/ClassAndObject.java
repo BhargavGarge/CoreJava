@@ -118,3 +118,40 @@ public class ClassAndObject {
 
 
 }
+// Define the class
+class Student {
+    // Attributes (variables)
+    String name;
+    int rollNumber;
+    String course;
+
+    // Constructor (to initialize the object)
+    Student(String name, int rollNumber, String course) {
+        this.name = name;
+        this.rollNumber = rollNumber;
+        this.course = course;
+    }
+
+    // Method to display student details
+    void displayDetails() {
+        System.out.println("Student Name: " + name);
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println("Course: " + course);
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        // Create objects of the Student class
+        Student student1 = new Student("Bhargav", 101, "Computer Science");
+        Student student2 = new Student("Aditi", 102, "Mechanical Engineering");
+
+        // Display details of each student
+        System.out.println("Details of Student 1:");
+        student1.displayDetails();
+
+        System.out.println("\nDetails of Student 2:");
+        student2.displayDetails();
+    }
+}
