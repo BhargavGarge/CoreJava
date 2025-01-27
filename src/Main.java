@@ -7,6 +7,8 @@ public class Main {
 
 
     int instanceVaribale = 50;
+
+    
     //Instance Variables: Declared outside methods but inside a class; they belong to an object
     static int staticvariable=100;
     //Static Variables: Declared using the static keyword; shared among all objects of a class
@@ -95,6 +97,39 @@ Scanner scanner=new Scanner(System.in);
 
 
 
+        class Calculator {
+    // Method to add two integers
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method to add three integers
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Method to add two double numbers
+    double add(double a, double b) {
+        return a + b;
+    }
+
+    // Method to concatenate two strings
+    String add(String a, String b) {
+        return a + b;
+    }
+}
+
+public class MethodOverloadingExample {
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+
+        // Calling the add method with different arguments
+        System.out.println("Sum of 2 integers: " + calculator.add(10, 20)); // Calls add(int, int)
+        System.out.println("Sum of 3 integers: " + calculator.add(10, 20, 30)); // Calls add(int, int, int)
+        System.out.println("Sum of 2 doubles: " + calculator.add(5.5, 7.3)); // Calls add(double, double)
+        System.out.println("Concatenation of strings: " + calculator.add("Hello, ", "World!")); // Calls add(String, String)
+    }
+}
 
     }
 }
