@@ -133,3 +133,41 @@ public class MethodOverloadingExample {
 
     }
 }
+// Parent class
+class Animal {
+    // Method in the parent class
+    public void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+// Child class (Dog) inherits from Animal
+class Dog extends Animal {
+    // Overriding the sound() method in the child class
+    @Override
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+// Child class (Cat) inherits from Animal
+class Cat extends Animal {
+    // Overriding the sound() method in the child class
+    @Override
+    public void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating objects of Dog and Cat
+        Animal myDog = new Dog();
+        Animal myCat = new Cat();
+
+        // Calling the overridden methods (polymorphism in action)
+        myDog.sound();  // Output: Dog barks
+        myCat.sound();  // Output: Cat meows
+    }
+}
+
