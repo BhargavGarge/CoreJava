@@ -171,3 +171,58 @@ public class Main {
     }
 }
 
+import java.util.Scanner;
+
+public class StudentGradeCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Student Grade Calculator");
+        System.out.println("----------------------");
+        
+        // Get student details
+        System.out.print("Enter student name: ");
+        String name = scanner.nextLine();
+        
+        // Get marks for three subjects
+        System.out.print("Enter marks for Math (out of 100): ");
+        int mathMarks = scanner.nextInt();
+        
+        System.out.print("Enter marks for Science (out of 100): ");
+        int scienceMarks = scanner.nextInt();
+        
+        System.out.print("Enter marks for English (out of 100): ");
+        int englishMarks = scanner.nextInt();
+        
+        // Calculate total and average
+        int totalMarks = mathMarks + scienceMarks + englishMarks;
+        double averageMarks = totalMarks / 3.0;
+        
+        // Calculate grade
+        char grade;
+        if (averageMarks >= 90) {
+            grade = 'A';
+        } else if (averageMarks >= 80) {
+            grade = 'B';
+        } else if (averageMarks >= 70) {
+            grade = 'C';
+        } else if (averageMarks >= 60) {
+            grade = 'D';
+        } else {
+            grade = 'F';
+        }
+        
+        // Display results
+        System.out.println("\nStudent Report");
+        System.out.println("---------------");
+        System.out.println("Name: " + name);
+        System.out.println("Math: " + mathMarks);
+        System.out.println("Science: " + scienceMarks);
+        System.out.println("English: " + englishMarks);
+        System.out.println("Total Marks: " + totalMarks);
+        System.out.printf("Average Marks: %.2f\n", averageMarks);
+        System.out.println("Grade: " + grade);
+        
+        scanner.close();
+    }
+}
