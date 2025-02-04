@@ -226,3 +226,32 @@ public class StudentGradeCalculator {
         scanner.close();
     }
 }
+// First interface
+interface Animal {
+    void eat();
+}
+
+// Second interface
+interface Sound {
+    void makeSound();
+}
+
+// Class implementing both interfaces
+class Dog implements Animal, Sound {
+    public void eat() {
+        System.out.println("Dog eats food.");
+    }
+
+    public void makeSound() {
+        System.out.println("Dog barks.");
+    }
+}
+
+// Main class
+public class MultipleInheritance {
+    public static void main(String[] args) {
+        Dog myDog = new Dog();
+        myDog.eat();
+        myDog.makeSound();
+    }
+}
