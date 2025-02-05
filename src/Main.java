@@ -255,3 +255,40 @@ public class MultipleInheritance {
         myDog.makeSound();
     }
 }
+
+// Abstract class
+abstract class Vehicle {
+    abstract void start(); // Abstract method (no body)
+    
+    void stop() { // Concrete method
+        System.out.println("Vehicle is stopping...");
+    }
+}
+
+// Concrete class Car extending Vehicle
+class Car extends Vehicle {
+    @Override
+    void start() {
+        System.out.println("Car starts with a key.");
+    }
+}
+
+// Concrete class Bike extending Vehicle
+class Bike extends Vehicle {
+    @Override
+    void start() {
+        System.out.println("Bike starts with a self-start button.");
+    }
+}
+
+public class AbstractionExample {
+    public static void main(String[] args) {
+        Vehicle myCar = new Car();
+        myCar.start(); // Output: Car starts with a key.
+        myCar.stop();  // Output: Vehicle is stopping...
+
+        Vehicle myBike = new Bike();
+        myBike.start(); // Output: Bike starts with a self-start button.
+        myBike.stop();  // Output: Vehicle is stopping...
+    }
+}
