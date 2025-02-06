@@ -292,3 +292,64 @@ public class AbstractionExample {
         myBike.stop();  // Output: Vehicle is stopping...
     }
 }
+import java.sql.*;
+
+public class SimpleJDBC {
+    public static void main(String[] args) {
+        // Database URL, username, and password
+        String url = "jdbc:mysql://localhost:3306/your_database";
+        String user = "your_username";
+        String password = "your_password";
+
+        // JDBC variables
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            // Load MySQL JDBC Driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Establish connection
+            conn = DriverManager.getConnection(url, user, password);
+            System.out.println("Connected to the database!");
+
+            // Create a statement object
+            stmt = conn.createStatement();
+
+            // Create table (if not exists)
+            String createTableSQL = "CREATE TABLE IF NOT EXISTS users (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50), email VARCHAR(50))";
+            stmt.executeUpdate(createTableSQL);
+            System.out.println("Table checked/created successfully.");
+
+            // Insert data
+            String insertSQL = "INSERT INTO users (name, email) VALUES ('John Doe', 'john@example.com')";
+            stmt.executeUpdate(insertSQL);
+            System.out.println("Data inserted successfully.");
+
+            // Retrieve data
+            String selectSQL = "SELECT * FROM users";
+            rs = stmt.executeQuery(selectSQL);
+
+            // Display results
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                System.out.println("ID: " + id + ", Name: " + name + ", Email: " + email);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // Close resources
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
