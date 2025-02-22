@@ -425,3 +425,23 @@ public class TodoApp {
         }
     }
 }
+import java.util.concurrent.*;
+
+public class ComplexJavaExample {
+    public static void main(String[] args) throws Exception {
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+
+        Callable<Integer> task = () -> fibonacci(10); // Compute 10th Fibonacci number
+        
+        Future<Integer> future = executor.submit(task);
+
+        System.out.println("Computing Fibonacci...");
+        System.out.println("Result: " + future.get());
+
+        executor.shutdown();
+    }
+
+    static int fibonacci(int n) {
+        return (n <= 1) ? n : fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
